@@ -75,7 +75,6 @@ class SlapAttachViewController: UIViewController {
         
         print("Topcard is: \(topCardValue), BottomCard is: \(bottomCardValue)")
         
-        
         if topCardValue == bottomCardValue {
             print("Cards are the same")
             return true
