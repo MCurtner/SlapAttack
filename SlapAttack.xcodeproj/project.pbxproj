@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BAFD4CDD1BBC4D330012D969 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD4CDC1BBC4D330012D969 /* AppDelegate.swift */; };
-		BAFD4CDF1BBC4D330012D969 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD4CDE1BBC4D330012D969 /* ViewController.swift */; };
 		BAFD4CE21BBC4D330012D969 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD4CE01BBC4D330012D969 /* Main.storyboard */; };
 		BAFD4CE41BBC4D330012D969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFD4CE31BBC4D330012D969 /* Assets.xcassets */; };
 		BAFD4CE71BBC4D330012D969 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFD4CE51BBC4D330012D969 /* LaunchScreen.storyboard */; };
 		BAFD4CF21BBC4D330012D969 /* SlapAttackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD4CF11BBC4D330012D969 /* SlapAttackTests.swift */; };
 		BAFD4CFD1BBC4D330012D969 /* SlapAttackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD4CFC1BBC4D330012D969 /* SlapAttackUITests.swift */; };
+		BAFD4D0D1BBC4DA40012D969 /* SlapAttachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD4D0C1BBC4DA40012D969 /* SlapAttachViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		BAFD4CD91BBC4D330012D969 /* SlapAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlapAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFD4CDC1BBC4D330012D969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAFD4CDE1BBC4D330012D969 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BAFD4CE11BBC4D330012D969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAFD4CE31BBC4D330012D969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAFD4CE61BBC4D330012D969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		BAFD4CF81BBC4D330012D969 /* SlapAttackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlapAttackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFD4CFC1BBC4D330012D969 /* SlapAttackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlapAttackUITests.swift; sourceTree = "<group>"; };
 		BAFD4CFE1BBC4D330012D969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAFD4D0C1BBC4DA40012D969 /* SlapAttachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlapAttachViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				BAFD4CDC1BBC4D330012D969 /* AppDelegate.swift */,
-				BAFD4CDE1BBC4D330012D969 /* ViewController.swift */,
+				BAFD4D0C1BBC4DA40012D969 /* SlapAttachViewController.swift */,
 				BAFD4CE01BBC4D330012D969 /* Main.storyboard */,
 				BAFD4CE31BBC4D330012D969 /* Assets.xcassets */,
 				BAFD4CE51BBC4D330012D969 /* LaunchScreen.storyboard */,
@@ -192,6 +192,7 @@
 				TargetAttributes = {
 					BAFD4CD81BBC4D330012D969 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = M77G4VQ69B;
 					};
 					BAFD4CEC1BBC4D330012D969 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -255,8 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAFD4CDF1BBC4D330012D969 /* ViewController.swift in Sources */,
 				BAFD4CDD1BBC4D330012D969 /* AppDelegate.swift in Sources */,
+				BAFD4D0D1BBC4DA40012D969 /* SlapAttachViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SlapAttack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewcurtner.SlapAttack;
@@ -409,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SlapAttack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewcurtner.SlapAttack;
@@ -483,6 +486,7 @@
 				BAFD4D031BBC4D330012D969 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAFD4D041BBC4D330012D969 /* Build configuration list for PBXNativeTarget "SlapAttackTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +495,7 @@
 				BAFD4D061BBC4D330012D969 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAFD4D071BBC4D330012D969 /* Build configuration list for PBXNativeTarget "SlapAttackUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				BAFD4D091BBC4D330012D969 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
