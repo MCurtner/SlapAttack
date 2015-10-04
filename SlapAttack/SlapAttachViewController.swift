@@ -10,8 +10,6 @@ import UIKit
 
 class SlapAttachViewController: UIViewController {
     
-    @IBOutlet weak var player1Desk: UIImageView!
-    @IBOutlet weak var player2Deck: UIImageView!
     @IBOutlet weak var player1ScoreLabel: UILabel!
     @IBOutlet weak var player2ScoreLabel: UILabel!
     @IBOutlet weak var bottomCenterCard: UIImageView!
@@ -23,17 +21,21 @@ class SlapAttachViewController: UIViewController {
     
     var isPlayer1Turn: Bool = true
     var isPlayer2Turn: Bool = false
-    var playerBuzzed: Bool = false
+    var player1Buzzed: Bool = false
+    var player2Buzzed: Bool = false
     
     var player1Score: Int = 0
     var player2Score: Int = 0
     
     var cardString: String?
     
+    
+    // App Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Add the cards to the arra5
+        // Add the cards to the array
         addCardsToArray(letter1: "H", letter2: "C", letter3: "D", letter4: "S")
     }
     
@@ -70,16 +72,25 @@ class SlapAttachViewController: UIViewController {
     // Check if center cards are the same
     
     func compareCenterCards() -> Bool {
-        let topCardValue: Int = getNumbersFromString(theString: centerCardsArray[centerCardsArray.count - 1])
-        let bottomCardValue: Int = getNumbersFromString(theString: centerCardsArray[centerCardsArray.count - 2])
         
-        print("Topcard is: \(topCardValue), BottomCard is: \(bottomCardValue)")
-        
-        if topCardValue == bottomCardValue {
-            print("Cards are the same")
-            return true
+        // Check if the centerCardsArray contains 2 index elements
+        if centerCardsArray.count > 1 {
+            
+            let topCardValue: Int = getNumbersFromString(theString: centerCardsArray[centerCardsArray.count - 1])
+            let bottomCardValue: Int = getNumbersFromString(theString: centerCardsArray[centerCardsArray.count - 2])
+            
+            print("Topcard is: \(topCardValue), BottomCard is: \(bottomCardValue)")
+            
+            // Check if the cards are the same
+            if topCardValue == bottomCardValue {
+                print("Cards are the same")
+                return true
+            } else {
+                print("uh oh!")
+                return false
+            }
+
         } else {
-            print("uh oh!")
             return false
         }
     }
@@ -105,7 +116,6 @@ class SlapAttachViewController: UIViewController {
         if isPlayer1Turn {
             getRandomCard()
             topCenterCard.image = UIImage(named: cardString!)
-            //print(cardString)
             
             centerCardsArray.append(cardString!)
             
@@ -124,7 +134,6 @@ class SlapAttachViewController: UIViewController {
             centerCardsArray.append(cardString!)
             
             setBottomCardImage()
-
             
             isPlayer1Turn = true
             isPlayer2Turn = false
